@@ -1,149 +1,672 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Nan Cheng - postdoctoral fellow in physics at Georgia Institute of Technology." />
   <title>Nan Cheng</title>
-  <!-- Optional: link an external CSS file for styling -->
-  <!-- <link rel="stylesheet" href="styles.css"> -->
   <style>
-    /* Simple styling for demonstration purposes */
+    :root {
+      --bg: #f7f7f4;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #59656f;
+      --line: #d9dedc;
+      --accent: #1f6f8b;
+      --accent-dark: #164d63;
+      --tag-bg: #eaf4f8;
+      --shadow: 0 18px 40px rgba(31, 41, 51, 0.08);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      line-height: 1.6;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
     }
-    header, nav, main, footer {
-      padding: 1rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    nav ul {
-      list-style: none;
-      padding-left: 0;
-      display: flex;
-      gap: 1rem;
-    }
-    nav a {
+
+    a {
+      color: var(--accent);
       text-decoration: none;
-      color: #444;
     }
-    nav a:hover {
+
+    a:hover,
+    a:focus {
+      color: var(--accent-dark);
       text-decoration: underline;
     }
-    section {
-      margin-bottom: 2rem;
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 0;
+      background: var(--ink);
+      color: white;
+      padding: 0.5rem 0.75rem;
+      z-index: 1000;
     }
+
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ffffff 0%, #eef6f8 100%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .wrap {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 4.2rem 0 2.6rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.8fr);
+      gap: 2rem;
+      align-items: start;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.18;
+      margin: 0 0 0.8rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      letter-spacing: -0.04em;
+      margin-bottom: 0.4rem;
+    }
+
     h2 {
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 0.5rem;
+      font-size: clamp(1.55rem, 3vw, 2rem);
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 0.55rem;
+      margin-bottom: 1.35rem;
     }
-    .contact {
+
+    h3 {
+      font-size: 1.08rem;
+      margin-top: 0.1rem;
+    }
+
+    p {
+      margin: 0 0 1rem;
+    }
+
+    .subtitle {
+      font-size: 1.15rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.2rem;
+    }
+
+    .contact-card dl {
+      margin: 0;
+    }
+
+    .contact-card div {
+      margin-bottom: 0.7rem;
+    }
+
+    .contact-card div:last-child {
+      margin-bottom: 0;
+    }
+
+    dt {
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.05rem;
+    }
+
+    dd {
+      margin: 0;
+      word-break: break-word;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(247, 247, 244, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.75rem;
+      list-style: none;
+      margin: 0;
+      padding: 0.8rem 0;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 0.28rem 0.5rem;
+      border-radius: 999px;
+      color: var(--ink);
+      font-size: 0.96rem;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background: var(--tag-bg);
+      text-decoration: none;
+    }
+
+    main {
+      padding: 2.4rem 0 3.4rem;
+    }
+
+    section {
+      margin: 0 0 3rem;
+      scroll-margin-top: 5rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .card,
+    .note-card,
+    .publication-list,
+    .timeline {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .card,
+    .note-card {
+      padding: 1.1rem 1.15rem;
+    }
+
+    .card p,
+    .note-card p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      background: var(--tag-bg);
+      color: var(--accent-dark);
+      padding: 0.18rem 0.55rem;
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+
+    .timeline {
+      padding: 0.3rem 1.15rem;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 165px minmax(0, 1fr);
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: 0;
+    }
+
+    .date {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .publication-list {
+      margin: 0;
+      padding: 1.2rem 1.2rem 1.2rem 2rem;
+    }
+
+    .publication-list li {
+      padding-left: 0.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .publication-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .authors {
+      color: var(--muted);
+    }
+
+    .venue {
       font-style: italic;
+    }
+
+    .small-note {
+      color: var(--muted);
+      font-size: 0.94rem;
+      margin-top: 0.65rem;
+    }
+
+    .note-group-title {
+      color: var(--muted);
+      font-size: 0.92rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 1.4rem 0 0.75rem;
+    }
+
+    .note-group-title:first-of-type {
+      margin-top: 0;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      padding: 2rem 0;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 800px) {
+      .hero-grid,
+      .grid,
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 3rem;
+      }
+
+      nav {
+        position: static;
+      }
     }
   </style>
 </head>
-
 <body>
-  <!-- Header / Site Title -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
   <header>
-    <h1>Nan Cheng</h1>
+    <div class="wrap hero">
+      <div class="hero-grid">
+        <div>
+          <h1>Nan Cheng</h1>
+          <p class="subtitle">Postdoctoral Fellow, School of Physics, Georgia Institute of Technology</p>
+          <p>
+            I am a theoretical physicist working in condensed matter physics and statistical mechanics.
+            My research uses ideas from symmetry, geometry, topology, and mechanics to study waves,
+            self-assembly, non-Hermitian systems, and mechanical metamaterials.
+          </p>
+          <p>
+            I am currently a postdoctoral fellow at Georgia Tech, advised by Zeb D. Rocklin. I received
+            my Ph.D. in Physics from the University of Michigan, Ann Arbor, advised by Xiaoming Mao and Kai Sun,
+            and also received an M.S. in Mathematics and an M.S. in Physics from Michigan. Before that, I earned
+            a B.S. with Honors in Physics from Fudan University.
+          </p>
+          <div class="tags" aria-label="Research keywords">
+            <span class="tag">Condensed Matter Physics</span>
+            <span class="tag">Statistical Mechanics</span>
+            <span class="tag">Topological Mechanics</span>
+            <span class="tag">Representation Theory</span>
+            <span class="tag">Riemannian Geometry</span>
+            <span class="tag">Non-Hermitian Physics</span>
+          </div>
+        </div>
+
+        <aside class="contact-card" aria-label="Contact information">
+          <dl>
+            <div>
+              <dt>Email</dt>
+              <dd><a href="mailto:ncheng70@gatech.edu">ncheng70@gatech.edu</a></dd>
+            </div>
+            <div>
+              <dt>Phone</dt>
+              <dd><a href="tel:+17348340799">+1-734-834-0799</a></dd>
+            </div>
+            <div>
+              <dt>Office</dt>
+              <dd>Howey Physics Building, Atlanta, GA 30332</dd>
+            </div>
+            <div>
+              <dt>Google Scholar</dt>
+              <dd><a href="https://scholar.google.com/citations?user=Emc7cs0AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">My Google Scholar site</a></dd>
+            </div>
+            <div>
+              <dt>CV</dt>
+              <dd><a href="https://drive.google.com/file/d/1tneWc_rfVGfQ2Hd7N2sLurBCPo9FsldE/view?usp=drive_link" target="_blank" rel="noopener noreferrer">View or download CV</a></dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </div>
   </header>
 
-  <!-- Navigation Menu -->
-  <nav>
-    <ul>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#cv">CV</a></li>
-      <li><a href="#projects">Projects</a></li>
-		<li><a href="#mynotes">My Notes</a></li>
-    </ul>
+  <nav aria-label="Main navigation">
+    <div class="wrap">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#notes">Notes</a></li>
+        <li><a href="#talks">Talks</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <main>
-    <!-- About Me Section -->
+  <main id="main" class="wrap">
     <section id="about">
       <h2>About Me</h2>
-      <p>
-        <!-- Replace with your own introduction -->
-        Hello! I am Nan Cheng, currently a Ph.D candidate in physics at University of Michigan, Ann Arbor. 
-        I received my Bachelor's degree (with highest honor) in physics from Fudan University in 2019.
-      </p>
-      <p>
-        <!-- Mention your research interests -->
-        My research interests include condensed matter physics and statistical physics. 
-        I enjoy collaborating on projects related to systems with novel symmetries, self-assembly problems, elasticity, and non-Hermitian physics.
-      </p>
-      <p class="contact">
-        <!-- Contact info -->
-		Tel: +1-7348340799<br>
-        Email: <a href="nancheng@umich.edu">nancheng@umich.edu</a><br>
-		Google Scholar: <a href="https://scholar.google.com/citations?user=Emc7cs0AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">My google scholar site</a><br>
-        Office: 2247 Randall Laboratory, 450 Church Street, Ann Arbor, MI 48109
-      </p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="date">Sept. 2025 - Present</div>
+          <div>
+            <h3>Postdoctoral Fellow, Georgia Institute of Technology</h3>
+            <p>School of Physics. Advisor: Zeb D. Rocklin.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">Aug. 2025</div>
+          <div>
+            <h3>Ph.D. in Physics, University of Michigan, Ann Arbor</h3>
+            <p>Advisors: Xiaoming Mao and Kai Sun.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">Aug. 2025 / May 2021</div>
+          <div>
+            <h3>M.S. in Mathematics / M.S. in Physics, University of Michigan, Ann Arbor</h3>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">June 2019</div>
+          <div>
+            <h3>B.S. with Honors in Physics, Fudan University</h3>
+            <p>GPA 3.72/4.00; ranking 4/103.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- CV Section -->
-    <section id="cv">
-      <h2>CV</h2>
-      <p>
-        You can view or download my CV here:
-        <!-- Make sure to replace "cv.pdf" with the correct filename or URL -->
-        <a href="https://drive.google.com/file/d/1tgemxGnYgW_FI3Zbh_4HmOTfPqySIsNs/view?usp=share_link" target="_blank" rel="noopener noreferrer">View CV (PDF)</a>.
-      </p>
+    <section id="research">
+      <h2>Research</h2>
+      <div class="grid">
+        <article class="card">
+          <h3><a href="https://link.aps.org/doi/10.1103/PhysRevLett.129.088002" target="_blank" rel="noopener noreferrer">Hyperbolic lattices and generalized band theory</a></h3>
+          <p>
+            Hyperbolic lattices have nonabelian translation groups and high-dimensional irreducible
+            representations. My work generalizes Bloch-type band theory to infinite hyperbolic lattices
+            and studies boundary modes, degeneracy, and mode counting in non-Euclidean crystals.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3><a href="https://link.aps.org/doi/10.1103/PhysRevLett.133.216401" target="_blank" rel="noopener noreferrer">Non-Hermitian spectral moments</a></h3>
+          <p>
+            Non-Hermitian spectra and eigenstates can be extremely sensitive to boundary conditions. I
+            introduced universal constraints from spectral moments and applied them to bulk dynamical
+            phases in non-Hermitian systems.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3><a href="https://link.aps.org/doi/10.1103/PhysRevE.110.054132" target="_blank" rel="noopener noreferrer">Frustrated self-assembly and hyperbolic crystals</a></h3>
+          <p>
+            I study how geometric frustration can guide self-limited assembly. One example is an analytic
+            theory of frustrated self-assembly of icosahedral nanoparticles based on the hyperbolic crystal
+            {3,5,3}.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3><a href="https://www.nature.com/articles/s41467-025-57518-x" target="_blank" rel="noopener noreferrer">Backscattering-free edge states in auxetic media</a></h3>
+          <p>
+            In passive linear elastic media with vanishing bulk modulus, spin-momentum locking of Rayleigh
+            waves can yield one-way edge states below all bulk bands, protected by a topological winding number.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3><a href="https://www.nature.com/articles/s41467-026-68688-7" target="_blank" rel="noopener noreferrer">Mechanical kinks controlled by acoustic waves</a></h3>
+          <p>
+            This collaboration studies the control and generation of mechanical kinks through acoustic waves,
+            connecting nonlinear mechanical excitations with wave-based actuation in metamaterials.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Disorder, topology, and mechanical Markov systems</h3>
+          <p>
+            Ongoing and under-review projects study disorder-induced polarization, soliton teleportation,
+            broad-band wave isolation, and boundary-mode proliferation in mechanical and hyperbolic systems.
+          </p>
+        </article>
+      </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-      <h2>Projects</h2>
-      <p>
-        Here is a brief overview of the projects I've worked on:
-      </p>
-      <ul>
+    <section id="publications">
+      <h2>Publications</h2>
+      <ol class="publication-list">
         <li>
-          <strong><a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.129.088002" target="_blank" rel="noopener noreferrer">Band Theory and Boundary Modes of High-Dimensional Representations of Infinite Hyperbolic Lattices</a>: </strong> Periodic lattices in hyperbolic space are characterized by symmetries beyond Euclidean crystallographic groups, offering a new platform for classical and quantum waves, demonstrating great potentials for a new class of topological metamaterials. One important feature of hyperbolic lattices is that their translation group is nonabelian, permitting high-dimensional irreducible representations (irreps), in contrast to abelian translation groups in Euclidean lattices. In this work, I generalized the concept of Bravais lattice to hyperbolic space using an algebraic correspondence between translation group and unit cells. Then I introduced a new hyperbolic Bloch's theorem to hyperbolic Bravais lattices with a focus on high dimensional irreps. I also discussed its implications on unusual mode-counting and degeneracy, as well as bulk-edge correspondence in hyperbolic lattices.
-		</li>
-        <li>
-          <strong><a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.216401" target="_blank" rel="noopener noreferrer">Universal Spectral Moment Theorem and Its Applications in Non-Hermitian Systems</a>:</strong> The high sensitivity of the spectrum and wavefunctions to boundary conditions, termed the non-Hermitian skin effect, represents a fundamental aspect of non-Hermitian systems. While it endows non-Hermitian systems with unprecedented physical properties, it presents notable obstacles in grasping universal properties that are robust against microscopic details and boundary conditions. In this work, I introduced a pivotal theorem: in the thermodynamic limit, for any non-Hermitian systems with finite-range interactions, all spectral moments are invariant quantities, independent of boundary conditions, posing strong constraints on the spectrum. Based on this theorem, I introduced new phases termed bulk dispersive phase and bulk proliferative phase in non-Hermitian band systems.
+          <strong><a href="https://link.aps.org/doi/10.1103/PhysRevLett.129.088002" target="_blank" rel="noopener noreferrer">Band theory and boundary modes of high-dimensional representations of infinite hyperbolic lattices</a></strong><br />
+          <span class="authors">Nan Cheng, Francesco Serafin, James McInerney, Zeb Rocklin, Kai Sun, and Xiaoming Mao</span><br />
+          <span class="venue">Physical Review Letters</span> 129, 088002 (2022).
         </li>
         <li>
-          <strong><a href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.110.054132" target="_blank" rel="noopener noreferrer">Geometrically frustrated self-assembly of hyperbolic crystals from icosahedral nanoparticles</a>:</strong> Geometric frustration is a fundamental concept in various areas of physics, and its role in self-assembly processes has recently been recognized as a source of intricate self-limited structures. In this work, I presented an analytic theory of the geometrically frustrated self-assembly of regular icosahedral nanoparticle based on the non-Euclidean crystal {3,5,3} formed by icosahedra in hyperbolic space. I found a possible ground state of these nanoparticles in the {3,5,3} crystal by an argument based on the geometrical interpretation of the gaussian curvature and numerically embedded that ground state in hyperbolic space <var>H<sup>3</sup></var> into Euclidean space <var>E<sup>3</sup></var>.
+          <strong><a href="https://link.aps.org/doi/10.1103/PhysRevLett.133.216401" target="_blank" rel="noopener noreferrer">Universal spectral moment theorem and its applications in non-Hermitian systems</a></strong><br />
+          <span class="authors">Nan Cheng, Chang Shu, Kai Zhang, Xiaoming Mao, and Kai Sun</span><br />
+          <span class="venue">Physical Review Letters</span> 133, 216401 (2024).
         </li>
-		<li>
-          <strong><a href="https://arxiv.org/abs/2306.07493" target="_blank" rel="noopener noreferrer">Backscattering-free edge states below all bands in two-dimensional auxetic media</a>:</strong> Unidirectional and backscattering-free propagation of sound waves is of fundamental interest in physics and highly sought-after in engineering. Current strategies utilize topologically protected chiral edge modes in bandgaps, or complex mechanisms involving active constituents or nonlinearity. In this work, my collaborators and I proposed a new class of passive, linear, one-way edge states based on spin-momentum locking of Rayleigh waves in two-dimensional media in the limit of vanishing bulk modulus, which provides perfect unidirectional and backscattering-free edge propagation immune to any edge roughness at a broad range of frequencies instead of residing in gaps between bulk bands. I further showed that such modes are characterized by a new topological winding number that protects the linear momentum of the wave along the edge.
+        <li>
+          <strong><a href="https://link.aps.org/doi/10.1103/PhysRevE.110.054132" target="_blank" rel="noopener noreferrer">Frustrated self-assembly of hyperbolic crystals from icosahedral nanoparticles</a></strong><br />
+          <span class="authors">Nan Cheng, Kai Sun, and Xiaoming Mao</span><br />
+          <span class="venue">Physical Review E</span> 110, 054132 (2024).
         </li>
-      </ul>
+        <li>
+          <strong><a href="https://www.nature.com/articles/s41467-025-57518-x" target="_blank" rel="noopener noreferrer">Backscattering-free edge states below all bands in two-dimensional auxetic media</a></strong><br />
+          <span class="authors">Wenting Cheng*, Kai Qian*, Nan Cheng*, Nicholas Boechler, Xiaoming Mao, and Kai Sun</span><br />
+          <span class="venue">Nature Communications</span> 16, 2373 (2025). <span class="small-note">* Equal contribution.</span>
+        </li>
+        <li>
+          <strong><a href="https://www.nature.com/articles/s43587-025-00847-9" target="_blank" rel="noopener noreferrer">Regeneration leads to global tissue rejuvenation in aging sexual planarians</a></strong><br />
+          <span class="authors">Xiaoting Dai, Xinghua Li, Alexander Tyshkovskiy, Cassandra Zuckerman, Nan Cheng, Peter Lin, David Paris, Saad Qureshi, Xiaoming Mao, Jayakrishnan Nandakumar, Vadim Gladyshev, Scott Pletcher, Leonid Kruglyak, Jacob Sobota, and Longhua Guo</span><br />
+          <span class="venue">Nature Aging</span> 5, 780-789 (2025).
+        </li>
+        <li>
+          <strong><a href="https://arxiv.org/abs/2502.07154" target="_blank" rel="noopener noreferrer">Rethinking fine-tuning when scaling test-time compute: limiting confidence improves mathematical reasoning</a></strong><br />
+          <span class="authors">Feng Chen, Allan Ravent&oacute;s, Nan Cheng, Surya Ganguli, and Shaul Druckmann</span><br />
+          <span class="venue">Advances in Neural Information Processing Systems</span> (2025).
+        </li>
+        <li>
+          <strong><a href="https://www.nature.com/articles/s41467-026-68688-7" target="_blank" rel="noopener noreferrer">Observation of mechanical kink control and generation via acoustic waves</a></strong><br />
+          <span class="authors">Kai Qian, Nan Cheng, Francesco Serafin, Kai Sun, Georgios Theocharis, Xiaoming Mao, and Nicholas Boechler</span><br />
+          <span class="venue">Nature Communications</span> 17, 2428 (2026).
+        </li>
+      </ol>
+
+      <h3 style="margin-top: 1.7rem;">Under Review</h3>
+      <ol class="publication-list">
+        <li>
+          <strong><a href="https://arxiv.org/abs/2511.08738" target="_blank" rel="noopener noreferrer">Lyapunov exponents explain disorder-induced polarization and soliton teleportation in a mechanical Markov system</a></strong><br />
+          <span class="authors">Will Stephenson, Nan Cheng, Kai Sun, and Xiaoming Mao</span><br />
+          Second round review at <span class="venue">Nature Communications</span>.
+        </li>
+        <li>
+          <strong><a href="https://arxiv.org/abs/2511.16328" target="_blank" rel="noopener noreferrer">Failure of the Goldstone theorem for vector fields and boundary-mode proliferation in hyperbolic lattices</a></strong><br />
+          <span class="authors">Daniel Sela*, Nan Cheng*, and Kai Sun</span><br />
+          Second round review at <span class="venue">Physical Review Letters</span>. <span class="small-note">* Equal contribution.</span>
+        </li>
+        <li>
+          <strong>Broad band wave isolation in viscoelastic topological mechanical metamaterials</strong><br />
+          <span class="authors">Fan Liu, Nan Cheng, James McInerney, Ellen Arruda, and Xiaoming Mao</span><br />
+          First round review at <span class="venue">Journal of the Mechanics and Physics of Solids</span>.
+        </li>
+        <li>
+          <strong>Self-limiting frustrated self-assembly of nanoscale right bipyramids into complex superstructures</strong><br />
+          <span class="authors">Daniel Garc&iacute;a-Lojo, Nan Cheng, Tim Moore, Rafael Contreras-C&aacute;ceres, Eva Bladt, Benito Rodr&iacute;guez-Gonzalez, Jorge P&eacute;rez-Juste, Kai Sun, Sara Bals, Sharon Glotzer, Luis M. Liz-Marz&aacute;n, Xiaoming Mao, Nick A. Kotov, and Isabel Pastoriza-Santos</span><br />
+          Second round review at <span class="venue">ACS Nano</span>.
+        </li>
+      </ol>
+
+      <h3 style="margin-top: 1.7rem;">Manuscripts in Preparation</h3>
+      <ol class="publication-list">
+        <li>
+          <strong>Validation of non-Hermitian spectral momentum theorem in active acoustic crystals</strong><br />
+          <span class="authors">Jiaxin Zhong, Chang Shu, Nan Cheng, Kai Zhang, Kai Sun, and Yun Jing</span>.
+        </li>
+      </ol>
     </section>
-	  
-	<!-- Projects Section -->
-    <section id="mynotes">
+
+    <section id="notes">
       <h2>My Notes</h2>
       <p>
-        Here are the notes I wrote during my Ph.D:
+        These notes were written for study, teaching, and explaining mathematical or physical ideas from a geometric or algebraic point of view.
       </p>
-      <ul>
+
+      <h3 class="note-group-title">Mathematics - Algebra</h3>
+      <article class="note-card">
+        <h3><a href="https://drive.google.com/file/d/1nu9jiVoAIlErrI5-yM0e_TjAqHaa1i27/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Group Theory: Concepts and Applications in Solid State Physics</a></h3>
+        <p>
+          A note on group theory, emphasizing concepts in group representation theory and their applications in solid state physics.
+        </p>
+        <p class="small-note">Upload the PDF to <code>notes/group_theory.pdf</code>, or replace this link with your Google Drive link.</p>
+      </article>
+
+      <h3 class="note-group-title">Physics, Geometry, and Mechanics</h3>
+      <div class="grid">
+        <article class="note-card">
+          <h3><a href="https://drive.google.com/file/d/1jtGRSmu77beE55IlPQXDxLC2yEYjDdCW/view?usp=drive_link" target="_blank" rel="noopener noreferrer">The Geometric Interpretation of Berry Phase</a></h3>
+          <p>
+            This note introduces Berry phase from the viewpoint of tangent spaces, differential forms,
+            vector bundles, covariant derivatives, curvature, and holonomy. It explains Berry connection,
+            Berry curvature, Berry phase, and Chern numbers geometrically.
+          </p>
+        </article>
+
+        <article class="note-card">
+          <h3><a href="https://drive.google.com/file/d/1Slfp3LJ9V1TW1Xz1WXVOio-zkQK58YoX/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Linear Elasticity</a></h3>
+          <p>
+            This note derives the familiar Lagrangian for linear elasticity from homogeneity, isotropy,
+            translations, and rotations, and then derives the constitutive relation between strain and stress.
+          </p>
+        </article>
+
+        <article class="note-card">
+          <h3><a href="https://drive.google.com/file/d/17CTht_dzc2NZDcfa_kfxxzDFKQI4LU9A/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Symmetries in Quantum Mechanics</a></h3>
+          <p>
+            This note explains symmetry operations in quantum mechanics, unitary and anti-unitary operators,
+            spatial symmetry, time reversal symmetry, basic representation theory, spin, SO(3), and SU(2).
+          </p>
+        </article>
+
+        <article class="note-card">
+          <h3><a href="https://drive.google.com/file/d/11fv5k_1oWKzQWJylpGbZuMlO0GIX5X9S/view?usp=drive_link" target="_blank" rel="noopener noreferrer">ADM Mass</a></h3>
+          <p>
+            This note introduces ADM mass, momentum, and angular momentum for asymptotically flat spacetime.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="talks">
+      <h2>Talks</h2>
+      <h3>Invited Talks</h3>
+      <ol class="publication-list">
         <li>
-          <strong><a href="https://drive.google.com/file/d/1AnxhEyDPza0s4UC-ajcTDJc3FdPsRu_D/view?usp=sharing" target="_blank" rel="noopener noreferrer">The geometric interpretation of Berry Phase</a>:</strong> This note introduces Berry phase from a geometric point of view. There are serval advantage of this point of view. First, the fact that the total Chern number of all bands must be zero is trivial from this point of view. Second, the gauge invariance of Berry phase is also trivial from this point of view. Third, from this point of view, the formula for computing non-abelian Berry phase is a natural extension for the abelian one. In this note, we first briefly introduce tangent spaces, differential forms and vector bundles. Then we explain geometrically parallel transport, covariant derivatives, sectional curvature and holonomy angles. We show that Berry connection is an induced connection of some natural connection on some natural vector bundles, Berry curvature is the curvature of Berry connection, and Berry phase is the holonomy angle. We further recover the formula computing (non-abelian) Berry phase and Chern numbers using differential forms.
+          <strong>Universal spectral moment theorem and its applications in non-Hermitian systems</strong><br />
+          Seminar at Department of Physics, Fudan University, Shanghai, China (2024).
         </li>
         <li>
-          <strong><a href="https://drive.google.com/file/d/1iQ8pwJ5tbNeLcYOzlo_wZwbtpVuC4n83/view?usp=sharing" target="_blank" rel="noopener noreferrer">Linear Elasticity</a>:</strong> This note shows step by step how the assumptions of homogeneity and isotropy together with the fact that translation and rotations don't cost energy constrain on the Lagrangian for linear elasticity to the form we are familiar with. We further derive constitute relation between strain and stress from the Lagrangian.
+          <strong>Real space curvature effect on wave propagation</strong><br />
+          Microstructured Quantum Matter Seminar, Max Planck Institute for the Structure and Dynamics of Matter, Hamburg, Germany (2024).
         </li>
         <li>
-          <strong><a href="https://drive.google.com/file/d/16WrrQUCYKcxMyycn6rtW0cQWDjfmoTGO/view?usp=sharing" target="_blank" rel="noopener noreferrer">Symmetries in Quantum Mechanics</a>:</strong> This note is originally written for my math friends introducing to them symmetries in quantum mechanics. Mathematically speaking, symmetrics are operations keeping certain object invariant. In this note, we define symmetries in quantum mechanics as operations preserving the solution of Schrödinger equation plus two other technical conditions. From this new definition, we show that symmetries are in one to one correspondence with unitary or anti-unitary operators commuting with the Hamiltonian. Then we introduce spatial symmetry, time reversal symmetry, and some basic representation theory. Finally, we introduce spin and explain why in classical mechanics we use SO(3) for angular momentum but in quantum mechiancs we use SU(2) for spin angular momentum.
+          <strong>Band theory and boundary modes of high-dimensional representations of infinite hyperbolic lattices</strong><br />
+          Society for Industrial and Applied Mathematics Conference on Material Science, Pittsburgh, PA, USA (2024).
         </li>
-		<li>
-          <strong><a href="https://drive.google.com/file/d/1TMPF9wGMbLBDXq1SB7Yo_ibShACvw4FK/view?usp=sharing" target="_blank" rel="noopener noreferrer">ADM Mass</a>:</strong> This note introduces ADM mass, momentum and angular momentum for asymptotically flat spacetime.
-        </li>
-      </ul>
+      </ol>
+
+      <h3 style="margin-top: 1.7rem;">Contributed Talks</h3>
+      <ol class="publication-list">
+        <li><strong>Geometrically frustrated self-assembly of hyperbolic crystals from icosahedral nanoparticles</strong>, ICAM Workshop on Frustrated Assemblies, Ann Arbor, MI (2025).</li>
+        <li><strong>Backscattering-free edge states below all bands in two-dimensional auxetic media</strong>, APS March Meeting, Anaheim, CA (2025).</li>
+        <li><strong>Universal spectral moment theorem and its applications in non-Hermitian systems</strong>, APS March Meeting, Minneapolis, MN (2024).</li>
+        <li><strong>Band theory and boundary modes of high-dimensional representations of infinite hyperbolic lattices</strong>, Complex Mechanical Metamaterials Workshop, Ann Arbor, MI (2023).</li>
+        <li><strong>Frustrated self-assembly of hyperbolic crystal from icosahedron shaped nanoparticles</strong>, APS March Meeting, Las Vegas, NV (2023).</li>
+        <li><strong>Band theory and boundary modes of high-dimensional representations of infinite hyperbolic lattices</strong>, CM-AMO Double Feature Seminar, Ann Arbor, MI (2022).</li>
+        <li><strong>Band theory and boundary modes of high-dimensional representations of infinite hyperbolic lattices</strong>, APS March Meeting, Chicago, IL (2022).</li>
+      </ol>
+    </section>
+
+    <section id="teaching">
+      <h2>Teaching</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="date">Fall 2019 - Spring 2021</div>
+          <div>
+            <h3>Elementary physics experiment</h3>
+            <p>Fall 2019, Spring 2020, Fall 2020, Spring 2021.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">Summer 2023</div>
+          <div>
+            <h3>Summer short course on topological mechanics</h3>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">Summer 2024</div>
+          <div>
+            <h3>Summer short course on linear elasticity</h3>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
-    <p>&copy; Nan Cheng, Jan. 2025. All rights reserved.</p>
+    <div class="wrap">
+      &copy; Nan Cheng, 2026. Last updated April 2026.
+    </div>
   </footer>
-
 </body>
 </html>
-
-
