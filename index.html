@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Nan Cheng - postdoctoral fellow in physics at Georgia Institute of Technology." />
+  <meta name="description" content="Nan Cheng - theoretical physicist. Research, publications, CV, and notes on condensed matter physics, geometry, topology, and mechanics." />
   <title>Nan Cheng</title>
   <style>
     :root {
@@ -44,6 +44,17 @@
     a:focus {
       color: var(--accent-dark);
       text-decoration: underline;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
     }
 
     .skip-link {
@@ -298,6 +309,11 @@
       margin-top: 0;
     }
 
+    .note-card .file-links {
+      margin-top: 0.8rem;
+      font-size: 0.9rem;
+    }
+
     footer {
       border-top: 1px solid var(--line);
       color: var(--muted);
@@ -330,14 +346,16 @@
       <div class="hero-grid">
         <div>
           <h1>Nan Cheng</h1>
-          <p class="subtitle">Postdoctoral Fellow, School of Physics, Georgia Institute of Technology</p>
+          <p class="subtitle">Theoretical Physicist<br />Incoming Research Scientist, Huawei &middot; Starting December 2026</p>
           <p>
             I am a theoretical physicist working in condensed matter physics and statistical mechanics.
-            My research uses ideas from symmetry, geometry, topology to study condensed matter physics and
-            statistical mechanics. 
+            My research uses symmetry, geometry, and topology to understand waves, mechanical metamaterials,
+            and frustrated self-assembly.
           </p>
           <p>
-            I am currently a postdoctoral fellow at Georgia Tech, advised by Zeb D. Rocklin. I received
+            I will join the Bohr &amp; Plank Lab at Huawei in Shanghai as a Research Scientist in December 2026.
+            From September 2025 to August 2026, I was a postdoctoral fellow at Georgia Tech, advised by
+            Zeb D. Rocklin. I received
             my Ph.D. in Physics from the University of Michigan, Ann Arbor, advised by Xiaoming Mao and Kai Sun,
             and also received an M.S. in Mathematics and an M.S. in Physics from Michigan. Before that, I earned
             a B.S. with Honors in Physics from Fudan University.
@@ -356,15 +374,11 @@
           <dl>
             <div>
               <dt>Email</dt>
-              <dd><a href="mailto:ncheng70@gatech.edu">ncheng70@gatech.edu</a></dd>
+              <dd><a href="mailto:nancheng@umich.edu">nancheng@umich.edu</a></dd>
             </div>
             <div>
               <dt>Phone</dt>
               <dd><a href="tel:+17348340799">+1-734-834-0799</a></dd>
-            </div>
-            <div>
-              <dt>Office</dt>
-              <dd>Howey Physics Building, Atlanta, GA 30332</dd>
             </div>
             <div>
               <dt>Google Scholar</dt>
@@ -372,7 +386,8 @@
             </div>
             <div>
               <dt>CV</dt>
-              <dd><a href="CV_April_2026.pdf" target="_blank" rel="noopener noreferrer">View or download CV</a></dd>
+              <!-- Replace CV.pdf in this repository when updating the CV. -->
+              <dd><a href="CV.pdf" target="_blank" rel="noopener noreferrer">View CV (PDF)</a> &middot; <a href="CV.pdf" download>Download</a><br /><span class="small-note">Updated October 16, 2026</span></dd>
             </div>
           </dl>
         </aside>
@@ -389,6 +404,7 @@
         <li><a href="#notes">Notes</a></li>
         <li><a href="#talks">Talks</a></li>
         <li><a href="#teaching">Teaching</a></li>
+        <li><a href="#awards">Awards</a></li>
       </ul>
     </div>
   </nav>
@@ -398,7 +414,14 @@
       <h2>About Me</h2>
       <div class="timeline">
         <div class="timeline-item">
-          <div class="date">Sept. 2025 - Present</div>
+          <div class="date">Starting Dec. 2026</div>
+          <div>
+            <h3>Incoming Research Scientist, Huawei</h3>
+            <p>Bohr &amp; Plank Lab, Shanghai, China.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">Sept. 2025 - Aug. 2026</div>
           <div>
             <h3>Postdoctoral Fellow, Georgia Institute of Technology</h3>
             <p>School of Physics. Advisor: Zeb D. Rocklin.</p>
@@ -421,7 +444,7 @@
           <div class="date">June 2019</div>
           <div>
             <h3>B.S. with Honors in Physics, Fudan University</h3>
-            <p>GPA 3.72/4.00; ranking 4/103.</p>
+            <p>GPA 3.72/4.00; ranking 4/103. Outstanding Graduate of Fudan University.</p>
           </div>
         </div>
       </div>
@@ -474,10 +497,11 @@
         </article>
 
         <article class="card">
-          <h3>Disorder, topology, and mechanical Markov systems</h3>
+          <h3><a href="https://doi.org/10.1038/s41467-026-77157-0" target="_blank" rel="noopener noreferrer">Disorder, topology, and mechanical Markov systems</a></h3>
           <p>
-            Ongoing and under-review projects study disorder-induced polarization, soliton teleportation,
-            broad-band wave isolation, and boundary-mode proliferation in mechanical and hyperbolic systems.
+            My work explores disorder-induced polarization and soliton teleportation in mechanical Markov
+            systems, broadband vibration isolation in viscoelastic metamaterials, and boundary-mode
+            proliferation in hyperbolic lattices.
           </p>
         </article>
       </div>
@@ -487,71 +511,78 @@
       <h2>Publications</h2>
       <ol class="publication-list">
         <li>
-          <strong><a href="https://link.aps.org/doi/10.1103/PhysRevLett.129.088002" target="_blank" rel="noopener noreferrer">Band theory and boundary modes of high-dimensional representations of infinite hyperbolic lattices</a></strong><br />
-          <span class="authors">Nan Cheng, Francesco Serafin, James McInerney, Zeb Rocklin, Kai Sun, and Xiaoming Mao</span><br />
-          <span class="venue">Physical Review Letters</span> 129, 088002 (2022).
+          <strong><a href="https://doi.org/10.1038/s41467-026-77157-0" target="_blank" rel="noopener noreferrer">Lyapunov exponents explain disorder-induced polarization and soliton teleportation in a mechanical Markov system</a></strong><br />
+          <span class="authors">Will Stephenson, <strong>Nan Cheng</strong>, Kai Sun, and Xiaoming Mao</span><br />
+          <span class="venue">Nature Communications</span> 17 (1), 10421 (2026).
         </li>
         <li>
-          <strong><a href="https://link.aps.org/doi/10.1103/PhysRevLett.133.216401" target="_blank" rel="noopener noreferrer">Universal spectral moment theorem and its applications in non-Hermitian systems</a></strong><br />
-          <span class="authors">Nan Cheng, Chang Shu, Kai Zhang, Xiaoming Mao, and Kai Sun</span><br />
-          <span class="venue">Physical Review Letters</span> 133, 216401 (2024).
+          <strong><a href="https://doi.org/10.1021/acsnano.6c01985" target="_blank" rel="noopener noreferrer">Frustrated assembly of nanoscale bipyramids into uniquely ordered superstructures</a></strong><br />
+          <span class="authors">Daniel García-Lojo, <strong>Nan Cheng</strong>, Tim Moore, Rafael Contreras-Cáceres, Qiongyang Chen, Eva Bladt, Benito Rodríguez-González, Jorge Perez-Juste, Kai Sun, Sara Bals, Luis Liz-Marzán, Sharon Glotzer, Xiaoming Mao, Nicholas Kotov, and Isabel Pastoriza-Santos</span><br />
+          <span class="venue">ACS Nano</span> 20 (34), 23729–23739 (2026).
         </li>
         <li>
-          <strong><a href="https://link.aps.org/doi/10.1103/PhysRevE.110.054132" target="_blank" rel="noopener noreferrer">Frustrated self-assembly of hyperbolic crystals from icosahedral nanoparticles</a></strong><br />
-          <span class="authors">Nan Cheng, Kai Sun, and Xiaoming Mao</span><br />
-          <span class="venue">Physical Review E</span> 110, 054132 (2024).
-        </li>
-        <li>
-          <strong><a href="https://www.nature.com/articles/s41467-025-57518-x" target="_blank" rel="noopener noreferrer">Backscattering-free edge states below all bands in two-dimensional auxetic media</a></strong><br />
-          <span class="authors">Wenting Cheng*, Kai Qian*, Nan Cheng*, Nicholas Boechler, Xiaoming Mao, and Kai Sun</span><br />
-          <span class="venue">Nature Communications</span> 16, 2373 (2025). <span class="small-note">* Equal contribution.</span>
-        </li>
-        <li>
-          <strong><a href="https://www.nature.com/articles/s43587-025-00847-9" target="_blank" rel="noopener noreferrer">Regeneration leads to global tissue rejuvenation in aging sexual planarians</a></strong><br />
-          <span class="authors">Xiaoting Dai, Xinghua Li, Alexander Tyshkovskiy, Cassandra Zuckerman, Nan Cheng, Peter Lin, David Paris, Saad Qureshi, Xiaoming Mao, Jayakrishnan Nandakumar, Vadim Gladyshev, Scott Pletcher, Leonid Kruglyak, Jacob Sobota, and Longhua Guo</span><br />
-          <span class="venue">Nature Aging</span> 5, 780-789 (2025).
-        </li>
-        <li>
-          <strong><a href="https://arxiv.org/abs/2502.07154" target="_blank" rel="noopener noreferrer">Rethinking fine-tuning when scaling test-time compute: limiting confidence improves mathematical reasoning</a></strong><br />
-          <span class="authors">Feng Chen, Allan Ravent&oacute;s, Nan Cheng, Surya Ganguli, and Shaul Druckmann</span><br />
-          <span class="venue">Advances in Neural Information Processing Systems</span> (2025).
+          <strong><a href="https://doi.org/10.1016/j.jmps.2026.106690" target="_blank" rel="noopener noreferrer">Viscoelastic topological mechanical metamaterial for broadband vibration isolation</a></strong><br />
+          <span class="authors">Fan Liu, <strong>Nan Cheng</strong>, James McInerney, Ellen Arruda, Xiaoming Mao, and Zi Chen</span><br />
+          <span class="venue">Journal of the Mechanics and Physics of Solids</span> 214, 106690 (2026).
         </li>
         <li>
           <strong><a href="https://www.nature.com/articles/s41467-026-68688-7" target="_blank" rel="noopener noreferrer">Observation of mechanical kink control and generation via acoustic waves</a></strong><br />
-          <span class="authors">Kai Qian, Nan Cheng, Francesco Serafin, Kai Sun, Georgios Theocharis, Xiaoming Mao, and Nicholas Boechler</span><br />
-          <span class="venue">Nature Communications</span> 17, 2428 (2026).
+          <span class="authors">Kai Qian, <strong>Nan Cheng</strong>, Francesco Serafin, Kai Sun, Georgios Theocharis, Xiaoming Mao, and Nicholas Boechler</span><br />
+          <span class="venue">Nature Communications</span> 17 (1), 2428 (2026).
+        </li>
+        <li>
+          <strong><a href="https://proceedings.neurips.cc/paper_files/paper/2025/file/e8f4eae0a41cab67fdead3aa6b77f083-Paper-Conference.pdf" target="_blank" rel="noopener noreferrer">Rethinking fine-tuning when scaling test-time compute: limiting confidence improves mathematical reasoning</a></strong><br />
+          <span class="authors">Feng Chen, Allan Raventós, <strong>Nan Cheng</strong>, Surya Ganguli, and Shaul Druckmann</span><br />
+          <span class="venue">Advances in Neural Information Processing Systems</span> 38, 158785–158818 (2025).
+        </li>
+        <li>
+          <strong><a href="https://www.nature.com/articles/s43587-025-00847-9" target="_blank" rel="noopener noreferrer">Regeneration leads to global tissue rejuvenation in aging sexual planarians</a></strong><br />
+          <span class="authors">Xiaoting Dai, Xinghua Li, Alexander Tyshkovskiy, Cassandra Zuckerman, <strong>Nan Cheng</strong>, Peter Lin, David Paris, Saad Qureshi, Xiaoming Mao, Jayakrishnan Nandakumar, Vadim Gladyshev, Scott Pletcher, Leonid Kruglyak, Jacob Sobota, and Longhua Guo</span><br />
+          <span class="venue">Nature Aging</span> 5 (5), 780–798 (2025).
+        </li>
+        <li>
+          <strong><a href="https://www.nature.com/articles/s41467-025-57518-x" target="_blank" rel="noopener noreferrer">Backscattering-free edge states below all bands in two-dimensional auxetic media</a></strong><br />
+          <span class="authors">Wenting Cheng*, Kai Qian*, <strong>Nan Cheng</strong>*, Nicholas Boechler, Xiaoming Mao, and Kai Sun</span><br />
+          <span class="venue">Nature Communications</span> 16 (1), 2373 (2025). <span class="small-note">* Equal contribution.</span>
+        </li>
+        <li>
+          <strong><a href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.110.054132" target="_blank" rel="noopener noreferrer">Geometrically frustrated self-assembly of hyperbolic crystals from icosahedral nanoparticles</a></strong><br />
+          <span class="authors"><strong>Nan Cheng</strong>, Kai Sun, and Xiaoming Mao</span><br />
+          <span class="venue">Physical Review E</span> 110 (5), 054132 (2024).
+        </li>
+        <li>
+          <strong><a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.216401" target="_blank" rel="noopener noreferrer">Universal spectral moment theorem and its applications in non-Hermitian systems</a></strong><br />
+          <span class="authors"><strong>Nan Cheng</strong>, Chang Shu, Kai Zhang, Xiaoming Mao, and Kai Sun</span><br />
+          <span class="venue">Physical Review Letters</span> 133 (21), 216401 (2024).
+        </li>
+        <li>
+          <strong><a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.129.088002" target="_blank" rel="noopener noreferrer">Band theory and boundary modes of high-dimensional representations of infinite hyperbolic lattices</a></strong><br />
+          <span class="authors"><strong>Nan Cheng</strong>, Francesco Serafin, James McInerney, Zeb Rocklin, Kai Sun, and Xiaoming Mao</span><br />
+          <span class="venue">Physical Review Letters</span> 129 (8), 088002 (2022).
         </li>
       </ol>
 
-      <h3 style="margin-top: 1.7rem;">Under Review</h3>
+      <h3 style="margin-top: 1.7rem;">Preprints</h3>
       <ol class="publication-list">
         <li>
-          <strong><a href="https://arxiv.org/abs/2511.08738" target="_blank" rel="noopener noreferrer">Lyapunov exponents explain disorder-induced polarization and soliton teleportation in a mechanical Markov system</a></strong><br />
-          <span class="authors">Will Stephenson, Nan Cheng, Kai Sun, and Xiaoming Mao</span><br />
-          Second round review at <span class="venue">Nature Communications</span>.
+          <strong><a href="https://arxiv.org/abs/2610.08635" target="_blank" rel="noopener noreferrer">Nonlinear curvature-free periodic folding in origami via symmetry classification of linear modes</a></strong><br />
+          <span class="authors"><strong>Nan Cheng</strong>, Leon M Kamp, Yanxin Feng, Wenqian Sun, Katia Bertoldi, and Zeb Rocklin</span><br />
+          <span class="venue">arXiv:2610.08635</span> (2026).
+        </li>
+        <li>
+          <strong><a href="https://arxiv.org/abs/2605.14653" target="_blank" rel="noopener noreferrer">Programmable non-Hermitian synchronization of light on a silicon photonic processor</a></strong><br />
+          <span class="authors">Ze-Sheng Xu†, <strong>Nan Cheng</strong>†, Mohammed S. Elmusrati, Rohan Yadgirkar, Andrea Cataldo, Rui Wen, Govind Krishna, Jun Gao†, and Ali W. Elshaari†</span><br />
+          <span class="venue">arXiv:2605.14653</span> (2026). <span class="small-note">† Corresponding author.</span>
+        </li>
+        <li>
+          <strong><a href="https://arxiv.org/abs/2604.27585" target="_blank" rel="noopener noreferrer">Observation of universal spectral moments and moment-controlled wave dynamics</a></strong><br />
+          <span class="authors">Jiaxin Zhong, Chang Shu, <strong>Nan Cheng</strong>, Jee Woo Kim, Kai Zhang, Kai Sun, and Yun Jing</span><br />
+          <span class="venue">arXiv:2604.27585</span> (2026).
         </li>
         <li>
           <strong><a href="https://arxiv.org/abs/2511.16328" target="_blank" rel="noopener noreferrer">Failure of the Goldstone theorem for vector fields and boundary-mode proliferation in hyperbolic lattices</a></strong><br />
-          <span class="authors">Daniel Sela*, Nan Cheng*, and Kai Sun</span><br />
-          Second round review at <span class="venue">Physical Review Letters</span>. <span class="small-note">* Equal contribution.</span>
-        </li>
-        <li>
-          <strong>Broad band wave isolation in viscoelastic topological mechanical metamaterials</strong><br />
-          <span class="authors">Fan Liu, Nan Cheng, James McInerney, Ellen Arruda, and Xiaoming Mao</span><br />
-          First round review at <span class="venue">Journal of the Mechanics and Physics of Solids</span>.
-        </li>
-        <li>
-          <strong>Self-limiting frustrated self-assembly of nanoscale right bipyramids into complex superstructures</strong><br />
-          <span class="authors">Daniel Garc&iacute;a-Lojo, Nan Cheng, Tim Moore, Rafael Contreras-C&aacute;ceres, Eva Bladt, Benito Rodr&iacute;guez-Gonzalez, Jorge P&eacute;rez-Juste, Kai Sun, Sara Bals, Sharon Glotzer, Luis M. Liz-Marz&aacute;n, Xiaoming Mao, Nick A. Kotov, and Isabel Pastoriza-Santos</span><br />
-          Second round review at <span class="venue">ACS Nano</span>.
-        </li>
-      </ol>
-
-      <h3 style="margin-top: 1.7rem;">Manuscripts in Preparation</h3>
-      <ol class="publication-list">
-        <li>
-          <strong>Validation of non-Hermitian spectral momentum theorem in active acoustic crystals</strong><br />
-          <span class="authors">Jiaxin Zhong, Chang Shu, Nan Cheng, Kai Zhang, Kai Sun, and Yun Jing</span>.
+          <span class="authors">Daniel Sela*, <strong>Nan Cheng</strong>*, and Kai Sun</span><br />
+          <span class="venue">arXiv:2511.16328</span> (2025). <span class="small-note">* Equal contribution.</span>
         </li>
       </ol>
     </section>
@@ -564,10 +595,12 @@
 
       <h3 class="note-group-title">Mathematics - Algebra</h3>
       <article class="note-card">
-        <h3><a href="notes/group_theory.pdf" target="_blank" rel="noopener noreferrer">Group Theory: Concepts and Applications in Solid State Physics</a></h3>
+        <h3><a href="notes/group_theory.pdf" target="_blank" rel="noopener noreferrer">Group Theory with Applications in Solid State Physics</a></h3>
         <p>
-          A note on group theory, emphasizing concepts in group representation theory and their applications in solid state physics.
+          Character theory and induced representations, with applications to translation and space groups,
+          magnetic groups, and the k&middot;p expansion.
         </p>
+        <p class="file-links">PDF &middot; 50 pages &middot; <a href="notes/group_theory.pdf" download aria-label="Download Group Theory with Applications in Solid State Physics (PDF)">Download</a></p>
       </article>
 
       <h3 class="note-group-title">Physics, Geometry, and Mechanics</h3>
@@ -576,32 +609,37 @@
           <h3><a href="notes/berry_phase.pdf" target="_blank" rel="noopener noreferrer">The Geometric Interpretation of Berry Phase</a></h3>
           <p>
             This note introduces Berry phase from the viewpoint of tangent spaces, differential forms,
-            vector bundles, covariant derivatives, curvature, and holonomy. It explains Berry connection,
-            Berry curvature, Berry phase, and Chern numbers geometrically.
+            vector bundles, covariant derivatives, curvature, and holonomy, with an introduction to
+            Chern classes and Chern numbers.
           </p>
+          <p class="file-links">PDF &middot; 14 pages &middot; <a href="notes/berry_phase.pdf" download aria-label="Download The Geometric Interpretation of Berry Phase (PDF)">Download</a></p>
         </article>
 
         <article class="note-card">
           <h3><a href="notes/linear_elasticity.pdf" target="_blank" rel="noopener noreferrer">Linear Elasticity</a></h3>
           <p>
-            This note derives the familiar Lagrangian for linear elasticity from homogeneity, isotropy,
-            translations, and rotations, and then derives the constitutive relation between strain and stress.
+            Elastic energy, strain and stress, the Navier&ndash;Cauchy equation, and bulk and surface waves.
+            These notes were prepared for a summer course on linear elasticity.
           </p>
+          <p class="file-links">PDF &middot; 14 pages &middot; <a href="notes/linear_elasticity.pdf" download aria-label="Download Linear Elasticity (PDF)">Download</a></p>
         </article>
 
         <article class="note-card">
           <h3><a href="notes/symmetries_in_quantum_mechanics.pdf" target="_blank" rel="noopener noreferrer">Symmetries in Quantum Mechanics</a></h3>
           <p>
-            This note explains symmetry operations in quantum mechanics, unitary and anti-unitary operators,
-            spatial symmetry, time reversal symmetry, basic representation theory, spin, SO(3), and SU(2).
+            Hilbert-space quantum mechanics, unitary and antiunitary symmetries, time reversal, and linear
+            and projective representations, including spin, SO(3), and SU(2).
           </p>
+          <p class="file-links">PDF &middot; 16 pages &middot; <a href="notes/symmetries_in_quantum_mechanics.pdf" download aria-label="Download Symmetries in Quantum Mechanics (PDF)">Download</a></p>
         </article>
 
         <article class="note-card">
-          <h3><a href="notes/adm_mass.pdf" target="_blank" rel="noopener noreferrer">ADM Mass</a></h3>
+          <h3><a href="notes/adm_mass.pdf" target="_blank" rel="noopener noreferrer">ADM Mass, Momentum, and Angular Momentum</a></h3>
           <p>
-            This note introduces ADM mass, momentum, and angular momentum for asymptotically flat spacetime.
+            A derivation of ADM energy, linear momentum, and angular momentum in asymptotically flat
+            spacetime using Noether&rsquo;s theorem.
           </p>
+          <p class="file-links">PDF &middot; 10 pages &middot; <a href="notes/adm_mass.pdf" download aria-label="Download ADM Mass, Momentum, and Angular Momentum (PDF)">Download</a></p>
         </article>
       </div>
     </section>
@@ -632,17 +670,24 @@
         <li><strong>Band theory and boundary modes of high-dimensional representations of infinite hyperbolic lattices</strong>, Complex Mechanical Metamaterials Workshop, Ann Arbor, MI (2023).</li>
         <li><strong>Frustrated self-assembly of hyperbolic crystal from icosahedron shaped nanoparticles</strong>, APS March Meeting, Las Vegas, NV (2023).</li>
         <li><strong>Band theory and boundary modes of high-dimensional representations of infinite hyperbolic lattices</strong>, CM-AMO Double Feature Seminar, Ann Arbor, MI (2022).</li>
-        <li><strong>Band theory and boundary modes of high-dimensional representations of infinite hyperbolic lattices</strong>, APS March Meeting, Chicago, IL (2022).</li>
+        <li><strong>Hyperbolic lattice waves, band theory and boundary modes of high-dimensional representations of infinite hyperbolic lattice</strong>, APS March Meeting, Chicago, IL (2022).</li>
       </ol>
     </section>
 
     <section id="teaching">
-      <h2>Teaching</h2>
+      <h2>Teaching and Mentoring</h2>
       <div class="timeline">
+        <div class="timeline-item">
+          <div class="date">Summers 2023 &amp; 2024</div>
+          <div>
+            <h3>Research Mentor, NSF REU Program</h3>
+            <p>University of Michigan.</p>
+          </div>
+        </div>
         <div class="timeline-item">
           <div class="date">Fall 2019 - Spring 2021</div>
           <div>
-            <h3>Elementary physics experiment</h3>
+            <h3>General Physics Lab</h3>
             <p>Fall 2019, Spring 2020, Fall 2020, Spring 2021.</p>
           </div>
         </div>
@@ -660,11 +705,30 @@
         </div>
       </div>
     </section>
+    <section id="awards">
+      <h2>Awards</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="date">March 2025</div>
+          <div>
+            <h3>Emerging Soft Matter Excellence Award Finalist</h3>
+            <p>APS Division of Soft Matter (DSOFT).</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">June 2017, 2018, 2019</div>
+          <div>
+            <h3>Top Talent Program in Basic Sciences</h3>
+            <p>Ministry of Education, China; Fudan University.</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
     <div class="wrap">
-      &copy; Nan Cheng, 2026. Last updated April 2026.
+      &copy; Nan Cheng, 2026. Last updated October 16, 2026.
     </div>
   </footer>
 </body>
